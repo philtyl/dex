@@ -370,7 +370,7 @@ class Application(DesktopEntry):
 		return self._basename
 
 	@classmethod
-	def _build_cmd(cls, exec_string, needs_terminal=False, term='x-terminal-emulator'):
+	def _build_cmd(cls, exec_string, needs_terminal=False, term=os.getenv('TERM', 'x-terminal-emulator')):
 		"""
 		# test single and multi argument commands
 		>>> Application._build_cmd('gvim')
